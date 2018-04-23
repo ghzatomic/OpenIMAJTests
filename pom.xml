@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>br.com.caio.teste</groupId>
+    <artifactId>TesteOpenIMAJ</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+
+    <repositories>
+        <repository>
+            <id>OpenIMAJ maven releases repository</id>
+            <url>http://maven.openimaj.org</url>
+        </repository>
+        <repository>
+            <id>OpenIMAJ maven snapshots repository</id>
+            <url>http://snapshots.openimaj.org</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openimaj</groupId>
+            <artifactId>core</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <artifactId>image-processing</artifactId>
+            <groupId>org.openimaj</groupId>
+            <version>RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.openimaj</groupId>
+            <artifactId>clustering</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openimaj</groupId>
+            <artifactId>image-local-features</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <artifactId>kinect</artifactId>
+            <groupId>org.openimaj.hardware</groupId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openimaj</groupId>
+            <artifactId>faces</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openimaj</groupId>
+            <artifactId>image-feature-extraction</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openimaj</groupId>
+            <artifactId>core-video-capture</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openimaj</groupId>
+            <artifactId>xuggle-video</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
+
+    </dependencies>
+
+</project>
