@@ -1,30 +1,23 @@
-package aulas.reconhecimento;
+package aulas.reconhecimento.face;
 
 import org.openimaj.image.DisplayUtilities;
-import org.openimaj.image.FImage;
 import org.openimaj.image.ImageUtilities;
 import org.openimaj.image.MBFImage;
 import org.openimaj.image.colour.RGBColour;
 import org.openimaj.image.colour.Transforms;
-import org.openimaj.image.processing.face.detection.DetectedFace;
-import org.openimaj.image.processing.face.detection.FaceDetector;
-import org.openimaj.image.processing.face.detection.HaarCascadeDetector;
-import org.openimaj.image.processing.face.detection.keypoints.FKEFaceDetector;
-import org.openimaj.image.processing.face.detection.keypoints.FacialKeypoint;
-import org.openimaj.image.processing.face.detection.keypoints.KEDetectedFace;
+import org.openimaj.image.processing.face.detection.CLMDetectedFace;
+import org.openimaj.image.processing.face.detection.CLMFaceDetector;
 
 import java.net.URL;
 import java.util.List;
 
-public class ReconhecimentoDaFacePontos {
+public class ReconhecimentoDaFaceCLM {
 
     public static void main(String[] args) throws Exception {
         // first, we load two images
         final URL image1url = new URL(
                 "http://s3.amazonaws.com/rapgenius/fema_-_39841_-_official_portrait_of_president-elect_barack_obama_on_jan-_13.jpg");
-        final MBFImage image1 = ImageUtilities.readMBF(image1url);
-
-        FKEFaceDetector fd = new FKEFaceDetector();
+        final MBFImage frame = ImageUtilities.readMBF(image1url);
 
 /*
         // A simple Haar-Cascade face detector
@@ -48,13 +41,16 @@ new CLMDetectedFaceRenderer()
         new KEDetectedFaceRenderer()
                 .drawDetectedFace(image1,10,face2);*/
 
-        List<KEDetectedFace> faces = fd.detectFaces( Transforms.calculateIntensity( image1 ) );
-        for (KEDetectedFace face : faces) {
-            image1.drawShape(face.getBounds(), RGBColour.RED);
-            FacialKeypoint[] keypoints = face.getKeypoints();
+        CLMFaceDetector fd = new CLMFaceDetector();
+        List<CLMDetectedFace> faces = fd.detectFaces( Transforms.calculateIntensity( frame ) );
+
+        for( CLMDetectedFace face : faces ) {
+            frame.drawShape(face.getBounds(), RGBColour.RED);
+
+            System.out.println(face.getRoll());
         }
 
-        DisplayUtilities.display(image1);
+        DisplayUtilities.display(frame);
 
     }
 }

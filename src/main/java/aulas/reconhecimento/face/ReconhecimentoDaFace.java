@@ -1,4 +1,4 @@
-package aulas.reconhecimento;
+package aulas.reconhecimento.face;
 
 import org.openimaj.feature.FloatFV;
 import org.openimaj.feature.FloatFVComparison;

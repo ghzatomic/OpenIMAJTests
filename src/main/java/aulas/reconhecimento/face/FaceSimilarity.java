@@ -1,4 +1,4 @@
-package aulas.reconhecimento;
+package aulas.reconhecimento.face;
 
 import java.io.IOException;
 import java.net.URL;
